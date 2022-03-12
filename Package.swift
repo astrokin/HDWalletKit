@@ -20,7 +20,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "HDWalletKit",
-            dependencies: ["CryptoSwift", "secp256k1"],
+            dependencies: [
+                .product(name: "CryptoSwift", package: "CryptoSwift"),
+                .product(name: "secp256k1", package: "secp256k1.swift")
+            ],
             path: "HDWalletKit"
         )
     ]
